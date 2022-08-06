@@ -14,31 +14,41 @@
 
 // Category: Technologies
 // Elements: 5
-
+///var2////////////////
 const listOfCategories = document.querySelectorAll(`.item`);
 const statCategoriesNum = () =>
   console.log(`Number of categories: ${listOfCategories.length}`);
 
-const setStatisticArr = (arr) => {
-  const list = [...arr].reduce((acc, item) => {
-    acc.push({
-      Catergory: item.querySelector(`h2`).textContent,
-      Elements: item.querySelectorAll(`li`).length,
-    });
+Array.from(listOfCategories).map((item) => {
+  console.log(`Catergory: ${item.querySelector(`h2`).textContent}`);
+  console.log(`Elements: ${item.querySelectorAll(`li`).length}`);
+});
 
-    return acc;
-  }, []);
-  return list;
-};
+//////////////////////var1--truy use maximum tehnic skill ))
+// const listOfCategories = document.querySelectorAll(`.item`);
+// const statCategoriesNum = () =>
+//   console.log(`Number of categories: ${listOfCategories.length}`);
 
-const viewStat = (arr, setStatisticArr) => {
-  setStatisticArr(arr).map((item) => {
-    const keys = Object.keys(item);
-    for (const key of keys) {
-      console.log(`${key} : ${item[key]}`);
-    }
-  });
-};
+// const setStatisticArr = (arr) => {
+//   const list = [...arr].reduce((acc, item) => {
+//     acc.push({
+//       Catergory: item.querySelector(`h2`).textContent,
+//       Elements: item.querySelectorAll(`li`).length,
+//     });
 
-statCategoriesNum();
-viewStat(listOfCategories, setStatisticArr);
+//     return acc;
+//   }, []);
+//   return list;
+// };
+
+// const viewStat = (arr, setStatisticArr) => {
+//   setStatisticArr(arr).map((item) => {
+//     const keys = Object.keys(item);
+//     for (const key of keys) {
+//       console.log(`${key} : ${item[key]}`);
+//     }
+//   });
+// };
+
+// statCategoriesNum();
+// viewStat(listOfCategories, setStatisticArr);
