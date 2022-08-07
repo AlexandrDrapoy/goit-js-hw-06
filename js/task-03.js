@@ -41,11 +41,14 @@ const list = document.querySelector(".gallery");
 // list.classList.add("gallery");
 
 const markup = images
-  .map(({ url, alt }) => `<li><img src=${url} alt=${alt}></li>`)
+  .map(
+    ({ url, alt }) =>
+      `<li class="gallery--item"><img class="gallery--img" src=${url} alt=${alt}></li>`
+  )
   .join("");
 list.insertAdjacentHTML("afterbegin", markup);
-const listItem = [...list.children];
-listItem.map((item) => {
-  item.classList.add("gallery--item");
-  item.firstChild.classList.add("gallery--img");
-});
+// const listItem = [...list.children];
+// listItem.map((item) => {
+//   item.classList.add("gallery--item");
+//   item.firstChild.classList.add("gallery--img");
+// });

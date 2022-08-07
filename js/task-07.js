@@ -9,6 +9,7 @@
 
 const ranger = document.querySelector("#font-size-control");
 const changeFontSize = document.querySelector("#text");
+changeFontSize.style.fontSize = `${ranger.value}px`;
 
 ranger.addEventListener(
   "input",

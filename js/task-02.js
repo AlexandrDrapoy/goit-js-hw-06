@@ -27,14 +27,27 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const list = document.querySelector("#ingredients");
+// const list = document.querySelector("#ingredients");
 
-const innerList = (element) => {
-  element.innerHTML = ingredients
-    .map((elemOfList) => `<li class = "item" >${elemOfList}</li>`)
-    .join("");
-};
-innerList(list);
+// const markup = (element) => {
+//   element.innerHTML = ingredients
+//     .map((elemOfList) => `<li class = "item" >${elemOfList}</li>`)
+//     .join("");
+// };
+// markup(list);
+
+const list = document.querySelector("#ingredients");
+const markup = ingredients
+  .map((elem) => {
+    const tag = document.createElement("li");
+    tag.classList.add("item");
+    tag.textContent = elem;
+    return tag.outerHTML;
+  })
+  .join("");
+
+list.insertAdjacentHTML("afterbegin", markup);
+
 // Потрібно створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
 // Not found
 // const people1 = [

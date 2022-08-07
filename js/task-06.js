@@ -28,7 +28,18 @@ const input = document.querySelector("#validation-input");
 input.addEventListener("blur", () => {
   const requiredLength = Number(input.dataset.length);
   const actualLength = input.value.length;
-  actualLength === requiredLength
-    ? input.classList.add("valid")
-    : input.classList.add("invalid");
+  const inputClass = input.classList;
+
+  if (actualLength === requiredLength) {
+    removeClass(input, "invalid");
+    inputClass.add("valid");
+  } else {
+    removeClass(input, "valid");
+    inputClass.add("invalid");
+  }
 });
+function removeClass(elem, className) {
+  if (elem.classList.contains(className)) {
+    elem.classList.remove(className);
+  }
+}
